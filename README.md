@@ -56,7 +56,6 @@
   "dimensions": 312,
   "device": "cpu"
 }
-}
 ```
 
 ### `POST /embed`
