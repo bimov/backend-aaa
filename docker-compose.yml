@@ -1,0 +1,12 @@
+services:
+  inference-service:
+    container_name: rubert-inference-service
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      MODEL_NAME: sergeyzh/rubert-mini-frida
+      MODEL_MAX_LENGTH: "512"
+      MODEL_DEVICE: cpu
+      MODEL_DEFAULT_PREFIX: "categorize: "
+      TOKENIZERS_PARALLELISM: "false"

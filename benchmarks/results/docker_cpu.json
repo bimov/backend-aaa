@@ -1,0 +1,57 @@
+{
+  "timestamp_utc": "2026-04-05T10:43:39.754390+00:00",
+  "system": {
+    "platform": "macOS-14.4-arm64-arm-64bit",
+    "python": "3.11.9",
+    "cpu_count": 8,
+    "memory_total_mb": 8192.0
+  },
+  "service": {
+    "base_url": "http://127.0.0.1:8000",
+    "model": "sergeyzh/rubert-mini-frida",
+    "device": "cpu",
+    "dimensions": 312,
+    "container_name": "rubert-inference-service"
+  },
+  "scenario": {
+    "warmup_requests": 12,
+    "total_requests": 120,
+    "concurrency": 6
+  },
+  "metrics": {
+    "latency_ms": {
+      "mean": 149.774,
+      "p50": 147.895,
+      "p95": 174.195,
+      "p99": 181.042,
+      "min": 58.986,
+      "max": 194.441
+    },
+    "inference_time_ms": {
+      "mean": 25.46,
+      "p50": 24.758,
+      "p95": 29.208,
+      "p99": 46.079
+    },
+    "throughput_rps": 39.007,
+    "memory_mb": {
+      "baseline_rss": 270.4,
+      "peak_rss": 278.5,
+      "delta_rss": 8.1
+    }
+  },
+  "thresholds": {
+    "latency_p95_ms": 200.0,
+    "latency_p99_ms": 250.0,
+    "throughput_rps": 8.0,
+    "inference_time_p95_ms": 150.0,
+    "peak_rss_mb": 900.0
+  },
+  "verdicts": {
+    "latency_p95_ms": true,
+    "latency_p99_ms": true,
+    "throughput_rps": true,
+    "inference_time_p95_ms": true,
+    "peak_rss_mb": true
+  }
+}
